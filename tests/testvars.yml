@@ -1,0 +1,9 @@
+---
+certs:
+  - cn: first.domain.tld
+    sAN:
+      - foo.bar.baz
+      - bla.foo.bar
+  - cn: second.domain.tld
+  - cn: third.domain.tld
+...

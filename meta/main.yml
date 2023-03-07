@@ -1,0 +1,23 @@
+galaxy_info:
+  role_name: dehydrated
+  namespace: haufe_it
+  author: Jakob Haufe
+  description: Install and configure dehydrated on Debian hosts
+  company: haufe.it
+  issue_tracker_url: https://github.com/haufe-it/ansible-role-dehydrated/issues
+  license: GPL-3.0-only
+
+  min_ansible_version: 2.14
+
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
+        - sid
+
+  galaxy_tags:
+    - dehydrated
+    - debian
+
+dependencies: []

@@ -1,0 +1,6 @@
+---
+renew_privkey: true
+per_domain_config: false
+challenge: http-01
+use_apache: true
+...

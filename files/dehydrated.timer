@@ -1,0 +1,11 @@
+[Unit]
+Description=Run dehydrated regularly
+
+[Timer]
+Persistent=true
+OnCalendar=daily
+RandomizedDelaySec=12h
+
+[Install]
+WantedBy=timers.target
+

@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+{% if renew_privkey == False %}
+PRIVATE_KEY_RENEW=no
+{% endif %}
+{% if per_domain_config == True %}
+DOMAINS_D=/etc/dehydrated/domains.d
+{% endif %}
+

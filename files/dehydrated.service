@@ -1,0 +1,7 @@
+[Unit]
+Description=Dehydrated Certificate renewal
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/dehydrated --cleanup
+ExecStart=/usr/bin/dehydrated --cron

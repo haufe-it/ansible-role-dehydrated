@@ -1,0 +1,11 @@
+---
+- name: Update account info
+  ansible.builtin.command:
+    cmd: dehydrated --account
+- name: Reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
+- name: Renew certificates
+  ansible.builtin.command:
+    cmd: dehydrated --cron
+...
