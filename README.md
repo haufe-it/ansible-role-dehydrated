@@ -18,13 +18,15 @@ Example Playbook
 ```yaml
     - hosts: servers
       roles:
-        - role: haufe_it.dehydrated
-          contact_email: admin@example.com
-          challenge_type: http-01
-          certs:
-            - cn: server.example.com
-              sAN: www.example.com
-            - cn: git.example.com
+        - role: dehydrated
+      vars:
+        - dehydrated:
+            - contact_email: admin@example.com
+              challenge_type: http-01
+              certs:
+                - cn: server.example.com
+                  sAN: www.example.com
+                - cn: git.example.com
 ```
 
 License

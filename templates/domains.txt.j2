@@ -1,4 +1,4 @@
-{% for cert in certs %}
+{% for cert in dehydrated.certs %}
 {{ cert.cn }}{% if cert.sAN is defined %}
 {% for san in cert.sAN %} {{ san }}{% endfor %}
 {% endif %}
