@@ -1,3 +1,4 @@
+# {{ ansible_managed }}
 {% for cert in dehydrated.certs %}
 {{ cert.cn }}{% if cert.sAN is defined %}
 {% for san in cert.sAN %} {{ san }}{% endfor %}
