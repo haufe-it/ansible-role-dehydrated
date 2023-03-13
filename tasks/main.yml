@@ -1,7 +1,13 @@
 ---
-- name: Merge variables
+- name: Merge variable defaults
   set_fact:
     dehydrated: "{{ dehydrated_defaults | combine(dehydrated) }}"
+
+- name: Merge vault variables
+  set_fact:
+    dehydrated: "{{ dehydrated_vault | combine(dehydrated) }}"
+  when:
+    - dehydrated_vault is defined
 
 - name: Install dehydrated
   become: true
