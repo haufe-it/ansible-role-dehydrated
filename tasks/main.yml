@@ -1,4 +1,8 @@
 ---
+- name: Merge variables
+  set_fact:
+    dehydrated: "{{ dehydrated_defaults | combine(dehydrated) }}"
+
 - name: Install dehydrated
   become: true
   ansible.builtin.apt:

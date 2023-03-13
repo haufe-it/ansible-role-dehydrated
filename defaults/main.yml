@@ -1,6 +1,7 @@
 ---
-renew_privkey: true
-per_domain_config: false
-challenge: http-01
-use_apache: true
+dehydrated_defaults:
+  renew_privkey: true
+  per_domain_config: false
+  challenge_type: http-01
+  use_apache2: true
 ...
