@@ -1,0 +1,33 @@
+#!/bin/bash
+# vim: ts=2:sw=2:et
+# {{ ansible_managed }}
+
+set -e
+set -u
+set -o pipefail
+
+NSUPDATE="nsupdate -k /etc/dehydrated/nsupdate.key"
+TTL=300
+
+case "$1" in
+  "deploy_challenge")
+    if [ "$CHALLENGETYPE" == "dns-01" ]; then
+      printf "update add _acme-challenge.%s. %d in TXT \"%s\"\n\n" "${2}" "${TTL}" "${4}" | $NSUPDATE
+    fi
+    ;;
+  "clean_challenge")
+    if [ "$CHALLENGETYPE" == "dns-01" ]; then
+      printf "update delete _acme-challenge.%s. %d in TXT \"%s\"\n\n" "${2}" "${TTL}" "${4}" | $NSUPDATE
+    fi
+    ;;
+  "deploy_cert")
+    chown -R root.ssl-cert $BASEDIR/certs/
+    chmod g+rX -R $BASEDIR/certs/
+{% for service in dehydrated.restart_services %}
+    systemctl restart {{ service }}
+{% endfor %}
+    ;;
+esac
+
+exit 0
+

@@ -4,4 +4,5 @@ dehydrated_defaults:
   per_domain_config: false
   challenge_type: http-01
   use_apache2: true
+  restart_services: []
 ...

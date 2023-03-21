@@ -59,6 +59,17 @@
     owner: root
     group: root
 
+- name: Install hook script
+  become: true
+  ansible.builtin.template:
+    src: hook.j2
+    dest: /etc/dehydrated/hook
+    mode: 0700
+    owner: root
+    group: root
+  notify:
+    - Renew certificates
+
 - name: Configure dehydrated domains
   become: true
   ansible.builtin.template:

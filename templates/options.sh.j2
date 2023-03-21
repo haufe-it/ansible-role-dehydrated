@@ -1,4 +1,5 @@
 # {{ ansible_managed }}
+HOOK=/etc/dehydrated/hook
 {% if dehydrated.renew_privkey == False %}
 PRIVATE_KEY_RENEW=no
 {% endif %}
