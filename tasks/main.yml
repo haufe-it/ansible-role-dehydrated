@@ -64,7 +64,7 @@
   ansible.builtin.template:
     src: hook.j2
     dest: /etc/dehydrated/hook
-    mode: 0700
+    mode: "0700"
     owner: root
     group: root
   notify:
