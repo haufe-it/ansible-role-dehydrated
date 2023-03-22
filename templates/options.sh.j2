@@ -1,6 +1,7 @@
 # {{ ansible_managed }}
 CHALLENGETYPE={{ dehydrated.challenge_type }}
 HOOK=/etc/dehydrated/hook
+KEY_ALGO={{ dehydrated.key_algo }}
 {% if dehydrated.renew_privkey == False %}
 PRIVATE_KEY_RENEW=no
 {% endif %}
