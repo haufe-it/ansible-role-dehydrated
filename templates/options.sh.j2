@@ -1,4 +1,5 @@
 # {{ ansible_managed }}
+CHALLENGETYPE={{ dehydrated.challenge_type }}
 HOOK=/etc/dehydrated/hook
 {% if dehydrated.renew_privkey == False %}
 PRIVATE_KEY_RENEW=no
@@ -6,4 +7,3 @@ PRIVATE_KEY_RENEW=no
 {% if dehydrated.per_domain_config == True %}
 DOMAINS_D=/etc/dehydrated/domains.d
 {% endif %}
-
