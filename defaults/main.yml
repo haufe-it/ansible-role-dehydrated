@@ -1,9 +1,9 @@
 ---
 dehydrated_defaults:
-  renew_privkey: true
-  per_domain_config: false
   challenge_type: http-01
   key_algo: secp384r1
-  use_apache2: true
+  per_domain_config: false
+  renew_privkey: true
   restart_services: []
+  use_apache2: true
 ...
