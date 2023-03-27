@@ -29,6 +29,11 @@
     state: latest
   when: dehydrated.challenge_type == 'dns-01'
 
+- name: Switch key algorithm to RSA if Proxmox integration is enabled
+  ansible.builtin.set_fact:
+    dehydrated: "{{ dehydrated | combine({'key_algo': \"rsa\"}) }}"
+  when: dehydrated.pvenode_cert is defined
+
 - name: Create per-domain configuration directory
   become: true
   ansible.builtin.file:

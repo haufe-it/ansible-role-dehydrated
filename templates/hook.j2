@@ -26,6 +26,9 @@ case "$1" in
 {% for service in dehydrated.restart_services %}
     systemctl restart {{ service }}
 {% endfor %}
+{% if dehydrated.pvenode_cert is defined %}
+    pvenode cert set /var/lib/dehydrated/certs/{{ dehydrated.pvenode_cert }}/{cert,privkey}.pem --restart true --force true
+{% endif %}
     ;;
 esac
 
