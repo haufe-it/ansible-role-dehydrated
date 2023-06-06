@@ -1,4 +1,0 @@
----
-notifications:
-  webhook: https://galaxy.ansible.com/api/v1/notifications/?branch=main
-...
