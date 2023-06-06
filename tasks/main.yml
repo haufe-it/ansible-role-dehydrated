@@ -8,6 +8,7 @@
   ansible.builtin.apt:
     name:
       - dehydrated
+      - ssl-cert
     state: latest
 
 - name: Install dehydrated-apache2
