@@ -21,7 +21,7 @@ case "$1" in
     fi
     ;;
   "deploy_cert")
-    chown -R root.ssl-cert $BASEDIR/certs/
+    chown -R root:ssl-cert $BASEDIR/certs/
     chmod g+rX -R $BASEDIR/certs/
 {% for service in dehydrated.restart_services %}
     systemctl restart {{ service }}
