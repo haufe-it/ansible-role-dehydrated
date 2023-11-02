@@ -2,6 +2,8 @@
 - name: Update account info
   ansible.builtin.command:
     cmd: dehydrated --account
+  register: output
+  changed_when: output.rc == 0
 - name: Reload systemd
   ansible.builtin.systemd:
     daemon_reload: true
