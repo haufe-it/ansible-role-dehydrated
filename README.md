@@ -7,6 +7,11 @@ It contains explicit support for installing a certificate into Proxmox `pveproxy
 
 Supports `http-01` and `dns-01` challenge via nsupdate.
 
+Requirements
+------------
+
+- Debian
+
 Role Variables
 --------------
 
