@@ -8,5 +8,5 @@ jobs:
       - name: Install ansible-galaxy CLI
         run: sudo apt-get -oInstall-Recommands=false install ansible-core
       - name: Import to Ansible Galaxy
-        run: ansible-galaxy role import --token ${{ secrets.ANSIBLE_GALAXY_API_TOKEN }} haufe-it ansible-role-dehydrated
+        run: ansible-galaxy role import --token ${{ secrets.ANSIBLE_GALAXY_API_TOKEN }} ${GITHUB_REPOSITORY_OWNER} ${GITHUB_REPOSITORY#*\/}
 ...
