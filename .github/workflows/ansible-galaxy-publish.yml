@@ -9,4 +9,6 @@ jobs:
         run: sudo apt-get -oInstall-Recommands=false install ansible-core
       - name: Import to Ansible Galaxy
         run: ansible-galaxy role import --token ${{ secrets.ANSIBLE_GALAXY_API_TOKEN }} ${GITHUB_REPOSITORY_OWNER} ${GITHUB_REPOSITORY#*\/}
+      - name: Import to Ansible Galaxy (legacy namespace)
+        run: ansible-galaxy role import --token ${{ secrets.ANSIBLE_GALAXY_API_TOKEN }} ${GITHUB_REPOSITORY_OWNER/-/_} ${GITHUB_REPOSITORY#*\/}
 ...
