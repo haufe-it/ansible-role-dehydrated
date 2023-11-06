@@ -1,2 +1,7 @@
+---
+# vim: ft=yaml
+profile: production
+strict: true
 skip_list:
   - package-latest
+...
