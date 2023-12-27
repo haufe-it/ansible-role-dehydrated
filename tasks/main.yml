@@ -33,7 +33,7 @@
 - name: Switch key algorithm to RSA if Proxmox integration is enabled
   ansible.builtin.set_fact:
     dehydrated: "{{ dehydrated | combine({'key_algo': \"rsa\"}) }}"
-  when: dehydrated.pvenode_cert is defined
+  when: dehydrated.pvenode_cert is defined or dehydrated.pbs_cert is defined
 
 - name: Create per-domain configuration directory
   become: true
