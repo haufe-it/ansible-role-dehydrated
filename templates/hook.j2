@@ -30,7 +30,7 @@ case "$1" in
     pvenode cert set /var/lib/dehydrated/certs/{{ dehydrated.pvenode_cert }}/{cert,privkey}.pem --restart true --force true
 {% endif %}
 {% if dehydrated.pbs_cert is defined %}
-    cp /var/lib/dehydrated/certs/{{ dehydrated.pbs_cert }}/cert.pem /etc/proxmox-backup/proxy.pem
+    cp /var/lib/dehydrated/certs/{{ dehydrated.pbs_cert }}/fullchain.pem /etc/proxmox-backup/proxy.pem
     cp /var/lib/dehydrated/certs/{{ dehydrated.pbs_cert }}/privkey.pem /etc/proxmox-backup/proxy.key
     chmod o-rwx /etc/proxmox-backup/proxy.{pem,key}
     chgrp backup /etc/proxmox-backup/proxy.{pem,key}
