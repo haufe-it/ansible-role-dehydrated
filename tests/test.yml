@@ -3,4 +3,4 @@
   hosts: localhost
   remote_user: root
   roles:
-    - haufe_it.dehydrated
+    - haufe-it.dehydrated
