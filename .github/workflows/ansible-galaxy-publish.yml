@@ -6,12 +6,11 @@ on:
       - v*
 jobs:
   test:
-    if: false
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@v6
+        uses: ansible/ansible-lint@main
   publish:
     runs-on: ubuntu-latest
     steps:
