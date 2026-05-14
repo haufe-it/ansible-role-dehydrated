@@ -1,6 +1,7 @@
 galaxy_info:
   role_name: dehydrated
   namespace: haufe-it
+  standalone: true
   author: Jakob Haufe
   description: Install and configure dehydrated on Debian hosts
   company: haufe.it

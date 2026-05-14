@@ -36,6 +36,13 @@ case "$1" in
     chgrp backup /etc/proxmox-backup/proxy.{pem,key}
     systemctl restart proxmox-backup-proxy
 {% endif %}
+{% if dehydrated.pdm_cert is defined %}
+    cp /var/lib/dehydrated/certs/{{ dehydrated.pdm_cert }}/fullchain.pem /etc/proxmox-datacenter-manager/api.pem
+    cp /var/lib/dehydrated/certs/{{ dehydrated.pdm_cert }}/privkey.pem /etc/proxmox-datacenter-manager/api.key
+    chmod o-rwx /etc/proxmox-datacenter-manager/api.{pem,key}
+    chgrp backup /etc/proxmox-datacenter-manager/api.{pem,key}
+    systemctl restart proxmox-datacenter-manager-api.service
+{% endif %}
     ;;
 esac
 

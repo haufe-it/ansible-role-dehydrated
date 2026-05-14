@@ -3,7 +3,10 @@ dehydrated
 
 Install, configure and integrate dehydrated on Debian hosts.
 
-It contains explicit support for installing a certificate into Proxmox `pveproxy` and Proxmox Backup Server.
+It contains explicit support for installing a certificate into the following Proxmox components:
+ - `pveproxy`
+ - Proxmox Backup Server
+ - Proxmox Datacenter Manager API
 
 Supports `http-01` and `dns-01` challenge via nsupdate.
 
@@ -61,6 +64,15 @@ Example Playbook
          pbs_cert: pbs1.example.net
          certs:
            - cn: pbs1.example.net
+- hosts: pdm
+  roles:
+   - haufe_it.dehydrated
+  vars:
+   - dehydrated:
+       - contact_email: pdmadmin@example.net
+         pbs_cert: pdm.example.net
+         certs:
+           - cn: pdm.example.net
 ```
 
 License
